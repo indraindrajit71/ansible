@@ -1,0 +1,27 @@
+Question-1: 
+
+Create a file  httpd.yml so that
+
+	1)	 It should create a directory named   /var/www/html/public
+	
+	2)	Make sure to copy the file from https://timesofindia.indiatimes.com/city/ahmedabad/rapid-test-at-home-kits-flying-off-the-shelves/articleshow/88783483.cms and copy it to /var/www/html/public
+	
+	3) Give proper permissions to that file so that all other users can read it
+	
+	4)  Install apache
+	
+	5) Replace all entries of "AllowOverride None" with "AllowOverride AuthConfig" in the file /etc/apache2/apache2/conf  using the replace module
+	++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+	
+Question-2:
+
+  Create a file tar.yaml so that 
+  
+  1)	Make a tarball of the folder   /var/www/html/private.tar.gz  of the folder  /var/www/html/private
+  
+  2)	Create a directory named /var/www/html/private
+  
+  3) Copy contents https://timesofindia.indiatimes.com/city/ahmedabad/rapid-test-at-home-kits-flying-off-the-shelves/articleshow/88783483.cms and copy it to /var/www/html/private
+  
+  +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+  
