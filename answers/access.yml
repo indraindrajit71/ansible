@@ -1,0 +1,14 @@
+---
+- hosts: all
+  become: true
+  tasks:
+    - name: Create file if the URL works
+      get_url:
+       url: https://timesofindia.indiatimes.com
+       dest: /var/www/html/access.html
+       when: _result.status == 200
+    - name: Create another file if the website doesnt works
+      copy:
+       src: /tmp/nocontent.html
+       dest: /var/www/html/nocontent.html   
+       status_code: [201, 202, 503, 404]
