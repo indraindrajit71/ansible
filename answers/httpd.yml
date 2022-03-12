@@ -1,0 +1,25 @@
+---
+- hosts: all
+  become: true
+  tasks:
+    - name: Directory Creation
+      file:
+       path: /var/www/html/public
+       state: directory
+       owner: root
+       group: root
+       mode: '0755'
+    - name: Download Contents & Copy  
+      get_url:
+       url: https://timesofindia.indiatimes.com/city/ahmedabad/rapid-test-at-home-kits-flying-off-the-shelves/articleshow/88783483.cms  
+       dest: /var/www/html/public
+       mode: '0755'
+    - name: Install Apache
+      apt:
+       name: apache2
+       state: present   
+    - name: Replace entries
+      replace:
+       path: /etc/apache2/apache2.conf
+       regexp: 'AllowOverride None'
+       replace: 'AllowOverride AuthConfig'
