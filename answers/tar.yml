@@ -1,0 +1,6 @@
+---
+- hosts: all
+  become: true
+  tasks:
+    - name: Tar generations
+      command: tar -cvpf /var/www/html/public.tar.gz /var/www/html/public
