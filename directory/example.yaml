@@ -1,0 +1,28 @@
+---
+- hosts: all
+  tasks: 
+   - name: Create multiple folders
+     file:
+       path: /var/www/html/public
+       state: directory
+       mode: '0777'
+   - name: Download html from the website
+     get_url:
+       url: https://timesofindia.indiatimes.com/videos/news/caught-on-cam-tornado-hits-assams-barpeta-district/videoshow/91413649.cms
+       dest: /var/www/html/public/DevOps.cms
+       mode: '0644'      
+   - name: Download from the github Page
+     get_url:
+       url: https://raw.githubusercontent.com/indraindrajit71/DevOps8AM/main/deployment.yaml
+       dest: /var/www/html/public
+       mode: '0755'    
+   - name: Modify the Deployment yaml
+     lineinfile:
+       path: /var/www/html/public/deployment.yaml
+       regexp: '^apiVersion:'
+       line: apiVersion=API
+   - name: Create a tar ball of the public folder
+     command: tar -cvpf /var/www/html/public.tar.gz  /var/www/html/public 
+       
+
+

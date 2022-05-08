@@ -1,0 +1,18 @@
+---
+- hosts: all
+  tasks:
+    - name: Copy file with owner and permissions
+      copy:
+       src: /tmp/DevOps.yaml
+       dest: /tmp
+       owner: ubuntu
+       group: ubuntu
+       mode: '0644'
+       backup: yes
+    - name: Installing multiple packages
+      apt:
+       name: apache2
+       state: latest  
+       update_cache: yes
+       #become: yes
+       #allow_unauthenticated: yes

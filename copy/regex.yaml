@@ -1,0 +1,13 @@
+---
+- hosts: all
+  tasks:
+    - name: Customizing files of /etc/hosts
+      lineinfile:
+        path: /etc/hosts
+        regexp: '^127\.0\.0\.1'
+        line: 127.0.0.1 localhost
+        become: yes
+        become_user: root
+        owner: root
+        group: root
+        mode: '0644'
