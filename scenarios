@@ -27,17 +27,34 @@ Question-2:
   
 Question-3:
 
-Create a file  httpd.yml so that
+Create a file adh.yaml so that
 
-  1)  It should create a directory named   /var/www/html/public
-  
-  2)  Make sure to copy the file from 
-  https://timesofindia.indiatimes.com/city/ahmedabad/rapid-test-at-home-kits-flying-off-the-shelves/articleshow/88783483.cms 
-  and copy it to /var/www/html/public
-  
-  3) Give proper permissions to that file so that all other users can read it
-  
-  4)  Install apache
-  
-  5) Replace all entries of "AllowOverride None" with "AllowOverride AuthConfig" 
-  in the file /etc/apache2/apache2.conf using the replace module
+	a) This should copy the file /usr/local/bin/runme.sh to /usr/bin/runme.sh on all nodes.
+
+	b) This should run as user root user.
+
+	c) The file should have execute permissions.
+
+	d} file should be owned by ubuntu user.
+	
+
+Question-4:
+
+Create a file called authoriazation.yaml so that
+
+	a) It should check the content of  http://classroom.example.com/access
+	
+	b) If the url is accessible it should create a file named /var/www/html/access.html with the content of  http://classroom.example.com/access.
+
+	c) Otherwise it should create a file nocontent.html with the content as “I have no access”. Inaccessible
+   
+
+Question-5:
+
+Create a file called abort.yaml so that
+
+a)	create a file /etc/saveabort.txt with content "I am there". 
+	If this file exists, then it should not allow either overwriting the contents of the file or modifying the file
+
+
+	
