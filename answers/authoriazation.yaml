@@ -1,0 +1,14 @@
+---
+- name: Checking contents of the website
+  hosts: all
+  tasks:
+    - uri:
+       url: https://timesofindia.indiatimes.com/city/mumbai/maharashtra-sena-vs-sena-battle-hots-up-with-separate-whips-for-speaker-poll/articleshow/92625977.cms
+       return_content: yes
+      register: webpage
+    - get_url:
+       url: https://timesofindia.indiatimes.com/city/mumbai/maharashtra-sena-vs-sena-battle-hots-up-with-separate-whips-for-speaker-poll/articleshow/92625977.cms
+       dest: /var/www/html/access.html
+    - copy:
+       dest: /var/www/html/nocontent.html
+       content: “I have no access”
