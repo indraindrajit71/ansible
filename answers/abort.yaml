@@ -1,0 +1,11 @@
+---
+- name: Check the stats of the file
+  hosts: all
+  tasks:
+   - stat:
+      path: /etc/saveabort.txt
+     register: result 
+   - copy:
+      dest: /etc/saveabort.txt
+      content: 'I am there'      
+     when: result.stat.exists == false
