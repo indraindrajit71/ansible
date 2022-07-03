@@ -25,7 +25,9 @@ Question-2:
   
   +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
   
-Case-1: Create a file  httpd.yml so that
+Question-2:
+
+Create a file  httpd.yml so that
 
   1)  It should create a directory named   /var/www/html/public
   
