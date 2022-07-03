@@ -42,9 +42,9 @@ Question-4:
 
 Create a file called authoriazation.yaml so that
 
-	a) It should check the content of  http://classroom.example.com/access
+	a) It should check the content of  https://timesofindia.indiatimes.com/city/mumbai/maharashtra-sena-vs-sena-battle-hots-up-with-separate-whips-for-speaker-poll/articleshow/92625977.cms
 	
-	b) If the url is accessible it should create a file named /var/www/html/access.html with the content of  http://classroom.example.com/access.
+	b) If the url is accessible it should create a file named /var/www/html/access.html with the content of https://timesofindia.indiatimes.com/city/mumbai/maharashtra-sena-vs-sena-battle-hots-up-with-separate-whips-for-speaker-poll/articleshow/92625977.cms
 
 	c) Otherwise it should create a file nocontent.html with the content as “I have no access”. Inaccessible
    
